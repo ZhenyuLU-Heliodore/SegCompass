@@ -1,0 +1,45 @@
+data:
+  cached_dir: null
+  batch_size: 32
+  split_seed: 42
+
+ckpt:
+  save_dir: "checkpoints/"
+  load_path: null
+
+optim:
+  lr: 5e-5
+  eta_min_factor: 0.1
+  warmup_ratio: 0.03
+
+train:
+  max_epochs: 20
+
+loss:
+  l1_coef: 5
+
+sae_model:
+  architecture: standard
+  d_in: 4096
+  d_sae: 65536
+  activation_fn_str: relu
+  activation_fn_kwargs: {}
+  apply_b_dec_to_input: false
+  finetuning_scaling_factor: false
+  normalize_activations: none
+  dtype: bfloat16
+  device: cpu
+
+  # Meta Info as log
+  model_name: llava-1.5-7b
+  hook_name: blocks.16.hook_resid_post
+  hook_layer: 16
+
+  # USELESS！ placeholder for consistency
+  hook_head_index: null
+  context_size: 4096
+  prepend_bos: false
+  dataset_path: null
+  dataset_trust_remote_code: false
+  sae_lens_training_version: null
+  model_from_pretrained_kwargs: {}
