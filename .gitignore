@@ -181,6 +181,6 @@ wandb/
 workdir
 reasonseg_eval_results
 tmp_model_upload
-data/
+/data/
 pretrained_models/
 logs/
